@@ -1,7 +1,7 @@
 #app {
     display: grid;
     grid-template-areas:
-        'drawer navbar'
+        'navbar navbar'
         'drawer content';
     grid-template-columns: $sidebar-width 1fr;
     grid-template-rows: $navbar-height auto;
