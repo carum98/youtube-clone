@@ -19,7 +19,7 @@
             <i class="material-icons-outlined">videocam</i>
             <i class="material-icons-outlined">apps</i>
             <i class="material-icons-outlined">notifications</i>
-            <i class="material-icons">account_circle</i>
+            <i class="material-icons-outlined">account_circle</i>
         </section>
     </header>
 </template>

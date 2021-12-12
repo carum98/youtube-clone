@@ -1,3 +1,95 @@
 #drawer {
     background: $secondary;
+    padding-top: 12px;
+
+    overflow-y: auto;
+    overflow-x: clip;
+
+    &:not(:hover) {
+        &::-webkit-scrollbar-thumb {
+            background: $secondary;
+        }
+    }
+
+    hr {
+        margin: 10px 0;
+        height: 0px;
+        border-top: unset;
+        border-right: unset;
+        border-bottom: 1px solid $tertiary;
+        background: $tertiary;
+    }
+
+    h3 {
+        text-align: start;
+        margin-left: 24px;
+        font-size: 15px;
+        color: grey;
+        font-weight: 900;
+    }
+
+    .drawer {
+        &__item {
+            cursor: pointer;
+
+            &:hover {
+                background: $tertiary;
+            }
+
+            height: 40px;
+            display: flex;
+            align-items: center;
+            padding: 11px 24px;
+
+            i {
+                margin-right: 24px;
+            }
+
+            p {
+                font-size: 14px;
+                font-weight: bold;
+                line-height: 1.4rem;
+            }
+
+            @include lg() {
+                display: block;
+                padding: 10px;
+                height: auto;
+
+                i {
+                    margin-right: 0;
+                }
+
+                p {
+                    font-size: 10px;
+                }
+            }
+        }
+
+        &__footer {
+            padding-left: 20px;
+            color: grey;
+            display: flex;
+            flex-wrap: wrap;
+
+            a {
+                margin-right: 10px;
+                font-size: 14px;
+                font-weight: bold;
+                white-space: pre-line;
+
+                &:empty {
+                    display: block;
+                    height: 25px;
+                    width: 100%;
+                }
+            }
+
+            small {
+                display: block;
+                width: 100%;
+                margin: 15px 0;
+            }
+        }
+    }
 }
