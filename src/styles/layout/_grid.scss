@@ -3,7 +3,7 @@
     grid-template-areas:
         'navbar navbar'
         'drawer content';
-    grid-template-columns: $sidebar-width 1fr;
+    grid-template-columns: $sidebar-width calc(100% - $sidebar-width);
     grid-template-rows: $navbar-height auto;
 
     @include lg() {

@@ -1,7 +1,42 @@
 #chipbar {
+    $chip-padding: 12px;
+
     background: $secondary;
     height: $chip-bar-height;
 
     border-top: 1px solid $tertiary;
     border-bottom: 1px solid $tertiary;
+
+    padding: $chip-padding 0;
+
+    display: flex;
+
+    .chips {
+        display: flex;
+        align-items: center;
+        gap: $chip-padding;
+
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .chip {
+        height: 100%;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 30px;
+        display: inline-flex;
+        align-items: center;
+        padding: 0 $chip-padding;
+
+        background: $tertiary;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    [class*='button-'] {
+        border: unset;
+        background: $secondary;
+        color: #fff;
+        width: 40px;
+    }
 }
