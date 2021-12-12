@@ -1,7 +1,8 @@
-<template>
-  <h1>Hola Mundo, Listado</h1>
-</template>
-
-<script lang="ts">
-export default {}
+<script setup lang="ts">
+import ChipBar from '../layout/ChipBar.vue'
 </script>
+
+<template>
+    <ChipBar />
+    <h1></h1>
+</template>

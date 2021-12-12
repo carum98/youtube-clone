@@ -1,0 +1,32 @@
+#app {
+    display: grid;
+    grid-template-areas:
+        'drawer navbar'
+        'drawer content';
+    grid-template-columns: $sidebar-width 1fr;
+    grid-template-rows: $navbar-height auto;
+
+    @include lg() {
+        grid-template-columns: $sidebar-width-collapsed 1fr;
+    }
+
+    @include sm() {
+        grid-template-areas:
+            'navbar'
+            'content';
+
+        grid-template-columns: 1fr;
+    }
+}
+
+#navbar {
+    grid-area: navbar;
+}
+
+#content {
+    grid-area: content;
+}
+
+#drawer {
+    grid-area: drawer;
+}
