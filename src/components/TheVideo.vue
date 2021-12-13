@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import { PropType } from 'vue'
 import IVideo from '../interfaces/IVideo'
-import { convertStringToTime } from '../util/helper'
+import {
+    convertStringToTime,
+    convertNumberToString,
+    getTimeAgo,
+} from '../util/helper'
 
 defineProps({
     video: {
@@ -42,7 +46,10 @@ defineProps({
             <div class="video__info">
                 <p class="video__info-title">{{ video.title }}</p>
                 <p>{{ video.channelTitle }}</p>
-                <p>{{ video.views }} - {{ video.publishedAt }}</p>
+                <p>
+                    {{ convertNumberToString(video.views) }} -
+                    {{ getTimeAgo(video.publishedAt) }}
+                </p>
             </div>
         </header>
     </article>
