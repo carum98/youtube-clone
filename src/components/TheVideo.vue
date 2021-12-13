@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { PropType } from 'vue'
 import IVideo from '../interfaces/IVideo'
+import { convertStringToTime } from '../util/helper'
 
 defineProps({
     video: {
@@ -32,7 +33,9 @@ defineProps({
                     </div>
                 </div>
             </div>
-            <p class="video__thumbnail-duration">{{ video.duration }}</p>
+            <p class="video__thumbnail-duration">
+                {{ convertStringToTime(video.duration) }}
+            </p>
         </section>
         <header>
             <img :src="video.channelThumbnail" class="video__avatar" />
