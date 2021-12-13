@@ -4,7 +4,7 @@
         'navbar navbar'
         'drawer content';
     grid-template-columns: $sidebar-width calc(100% - $sidebar-width);
-    grid-template-rows: $navbar-height auto;
+    grid-template-rows: $navbar-height calc(100% - $navbar-height);
 
     @include lg() {
         grid-template-columns: $sidebar-width-collapsed 1fr;

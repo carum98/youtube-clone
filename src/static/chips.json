@@ -1,0 +1,80 @@
+{
+    "chips": [
+        {
+            "id": "1",
+            "label": "All"
+        },
+        {
+            "id": "2",
+            "label": "Gaming"
+        },
+        {
+            "id": "3",
+            "label": "Music"
+        },
+        {
+            "id": "4",
+            "label": "Movies"
+        },
+        {
+            "id": "5",
+            "label": "News"
+        },
+        {
+            "id": "6",
+            "label": "Sports"
+        },
+        {
+            "id": "7",
+            "label": "TV"
+        },
+        {
+            "id": "8",
+            "label": "Technology"
+        },
+        {
+            "id": "9",
+            "label": "Entertainment"
+        },
+        {
+            "id": "10",
+            "label": "PodCasts"
+        },
+        {
+            "id": "11",
+            "label": "Live"
+        },
+        {
+            "id": "12",
+            "label": "Cinema"
+        },
+        {
+            "id": "13",
+            "label": "JavaScript"
+        },
+        {
+            "id": "15",
+            "label": "SpaceX"
+        },
+        {
+            "id": "16",
+            "label": "Science"
+        },
+        {
+            "id": "17",
+            "label": "Coding"
+        },
+        {
+            "id": "18",
+            "label": "Coffee"
+        },
+        {
+            "id": "19",
+            "label": "Guides"
+        },
+        {
+            "id": "20",
+            "label": "Interviews"
+        }
+    ]
+}
