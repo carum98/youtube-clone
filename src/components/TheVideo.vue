@@ -16,7 +16,7 @@ defineProps({
 </script>
 
 <template>
-    <article class="video">
+    <a :href="`https://www.youtube.com/watch?v=${video.id}`" class="video">
         <section class="video__thumbnail">
             <img :src="video.thumbnail" />
             <div class="video__thumbnail-actions">
@@ -52,5 +52,5 @@ defineProps({
                 </p>
             </div>
         </header>
-    </article>
+    </a>
 </template>
