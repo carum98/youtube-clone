@@ -35,11 +35,11 @@ defineProps({
             <p class="video__thumbnail-duration">{{ video.duration }}</p>
         </section>
         <header>
-            <img :src="video.avatar" class="video__avatar" />
+            <img :src="video.channelThumbnail" class="video__avatar" />
             <div class="video__info">
                 <p class="video__info-title">{{ video.title }}</p>
-                <p>{{ video.channel }}</p>
-                <p>{{ video.views }} - {{ video.date }}</p>
+                <p>{{ video.channelTitle }}</p>
+                <p>{{ video.views }} - {{ video.publishedAt }}</p>
             </div>
         </header>
     </article>

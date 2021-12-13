@@ -2,12 +2,14 @@ interface IVideo {
     id: string
     title: string
     description: string
-    url: string
     thumbnail: string
-    channel: string
+    channelTitle: string
+    channelId: string
+    channelThumbnail: string
+    publishedAt: string
     views: string
-    date: string
-    avatar: string
+    likes: string
+    dislikes: string
     duration: string
 }
 
