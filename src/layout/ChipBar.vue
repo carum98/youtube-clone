@@ -28,7 +28,8 @@ const right = () => {
                 v-for="chip in chips"
                 :key="chip.id"
                 class="chip"
-                :class="{ 'chip--selected': selectedId === chip.id }">
+                :class="{ 'chip--selected': selectedId === chip.id }"
+                @click="selectedId = chip.id">
                 {{ chip.label }}
             </button>
         </div>

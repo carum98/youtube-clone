@@ -30,9 +30,12 @@
 
     .drawer {
         &__item {
+            color: white;
+            text-decoration: none;
             cursor: pointer;
 
-            &:hover {
+            &:hover,
+            &--active {
                 background: $tertiary;
             }
 
