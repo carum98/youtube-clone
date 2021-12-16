@@ -1,0 +1,176 @@
+{
+    "buttons": [
+        {
+            "text": "Home",
+            "to": "/",
+            "icon": "home"
+        },
+        {
+            "text": "Explore",
+            "to": "/explore",
+            "icon": "explore"
+        },
+        {
+            "text": "Suscriptions",
+            "to": "/subscriptions",
+            "icon": "subscriptions"
+        },
+        {
+            "text": "Library",
+            "to": "/video_library",
+            "icon": "video_library"
+        }
+    ],
+    "buttons2": [
+        {
+            "text": "Home",
+            "to": "/",
+            "icon": "home"
+        },
+        {
+            "text": "Explore",
+            "to": "/explore",
+            "icon": "explore"
+        },
+        {
+            "text": "Suscriptions",
+            "to": "/subscriptions",
+            "icon": "subscriptions"
+        },
+        {
+            "divider": true
+        },
+        {
+            "text": "Library",
+            "to": "/video_library",
+            "icon": "video_library"
+        },
+        {
+            "text": "History",
+            "to": "/history",
+            "icon": "history"
+        },
+        {
+            "text": "Your Videos",
+            "to": "/your_videos",
+            "icon": "slideshow"
+        },
+        {
+            "text": "Liked videos",
+            "to": "/liked_videos",
+            "icon": "thumb_up"
+        },
+        {
+            "text": "Watch later",
+            "to": "/watch_later",
+            "icon": "watch_later"
+        },
+        {
+            "divider": true
+        },
+        {
+            "subtitle": true,
+            "text": "SUBSCRIPTIONS"
+        },
+        {
+            "divider": true
+        },
+        {
+            "subtitle": true,
+            "text": "MORE FROM YOUTUBE"
+        },
+        {
+            "text": "YouTube Premium",
+            "to": "/youtube_premium",
+            "icon": "smart_display"
+        },
+        {
+            "text": "Gaming",
+            "to": "/gaming",
+            "icon": "sports_esports"
+        },
+        {
+            "text": "Learning",
+            "to": "/learning",
+            "icon": "lightbulb"
+        },
+        {
+            "text": "Sports",
+            "to": "/sports",
+            "icon": "emoji_events"
+        },
+        {
+            "divider": true
+        },
+        {
+            "text": "Settings",
+            "to": "/settings",
+            "icon": "settings"
+        },
+        {
+            "text": "Report",
+            "to": "/report",
+            "icon": "flag"
+        },
+        {
+            "text": "Help",
+            "to": "/help",
+            "icon": "help_outline"
+        },
+        {
+            "text": "Send feedback",
+            "to": "/send_feedback",
+            "icon": "feedback"
+        },
+        {
+            "divider": true
+        }
+    ],
+    "footer": [
+        {
+            "text": "About",
+            "to": "/terms"
+        },
+        {
+            "text": "Press",
+            "to": "/press"
+        },
+        {
+            "text": "Copyright",
+            "to": "/copyright"
+        },
+        {
+            "text": "Contact us",
+            "to": "/contact_us"
+        },
+        {
+            "text": "Creators",
+            "to": "/creators"
+        },
+        {
+            "text": "Advertise",
+            "to": "/advertise"
+        },
+        {
+            "text": "Developers",
+            "to": "/developers"
+        },
+        {},
+        {
+            "text": "Privacy",
+            "to": "/privacy"
+        },
+        {
+            "text": "Policy & Safety",
+            "to": "/policy_safety"
+        },
+        {
+            "text": "How YouTube works",
+            "to": "/how_youtube_works"
+        },
+        {
+            "text": "Test new features",
+            "to": "/test_new_features"
+        }
+    ]
+}
