@@ -7,7 +7,9 @@
     grid-template-rows: $navbar-height calc(100% - $navbar-height);
 
     @include lg() {
-        grid-template-columns: $sidebar-width-collapsed 1fr;
+        grid-template-columns: $sidebar-width-collapsed calc(
+                100% - $sidebar-width-collapsed
+            );
     }
 
     @include sm() {

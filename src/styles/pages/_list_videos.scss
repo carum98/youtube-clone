@@ -10,4 +10,9 @@
 
     height: calc(100% - 64px);
     overflow-y: scroll;
+
+    @include lg() {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 250px;
+    }
 }

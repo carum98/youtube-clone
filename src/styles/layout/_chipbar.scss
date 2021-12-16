@@ -31,6 +31,11 @@
         background: $tertiary;
         color: #fff;
         font-weight: bold;
+
+        &--selected {
+            background: #fff;
+            color: #000;
+        }
     }
 
     [class*='button-'] {
