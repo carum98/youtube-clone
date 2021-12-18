@@ -8,7 +8,6 @@ export function convertStringToTime(time: string): string {
     }
 }
 
-// 1000 to 10K or 10000 to 10M
 export function convertNumberToString(numString: string): string {
     const num = Number(numString)
 

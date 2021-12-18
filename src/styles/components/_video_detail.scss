@@ -1,0 +1,44 @@
+.view-video {
+    &__info {
+        margin-top: 10px;
+
+        &-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            margin-bottom: 15px;
+        }
+
+        &-subtitle {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        &-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        &-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+
+            button {
+                background: transparent;
+                color: #fff;
+                border: none;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+        }
+    }
+}

@@ -12,11 +12,18 @@ defineProps({
         type: Object as PropType<IVideo>,
         required: true,
     },
+    isSuggestion: {
+        type: Boolean,
+        default: false,
+    },
 })
 </script>
 
 <template>
-    <a :href="`https://www.youtube.com/watch?v=${video.id}`" class="video">
+    <a
+        :href="`/watch/${video.id}`"
+        class="video"
+        :class="{ 'video--suggested': isSuggestion }">
         <section class="video__thumbnail">
             <img :src="video.thumbnail" />
             <div class="video__thumbnail-actions">
@@ -43,6 +50,7 @@ defineProps({
         </section>
         <header>
             <img :src="video.channelThumbnail" class="video__avatar" />
+
             <div class="video__info">
                 <p class="video__info-title">{{ video.title }}</p>
                 <p>{{ video.channelTitle }}</p>

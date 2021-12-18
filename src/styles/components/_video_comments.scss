@@ -1,0 +1,124 @@
+.comments {
+    &__info {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        p {
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        button {
+            background: transparent;
+            color: #fff;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    }
+
+    &__input {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 15px;
+
+        img {
+            height: 45px;
+            width: 45px;
+            border-radius: 50%;
+        }
+
+        input {
+            background: transparent;
+            border: none;
+            width: 100%;
+            border-bottom: 1px solid #fff;
+            padding-bottom: 7px;
+            font-size: 15px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        margin-top: 25px;
+    }
+
+    &__item {
+        display: flex;
+        gap: 10px;
+
+        button {
+            background: transparent;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        a {
+            text-decoration: unset;
+            color: inherit;
+        }
+
+        img {
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+        }
+
+        &-content {
+            flex-grow: 1;
+        }
+
+        &-name,
+        &-text {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        &-date {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: initial;
+        }
+
+        &-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+
+            button {
+                color: rgba(255, 255, 255, 0.8);
+                span {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        &-reply {
+            display: flex;
+            align-items: center;
+            color: #3da4fc;
+        }
+
+        &-more {
+            color: #fff;
+            align-self: flex-start;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        &:hover {
+            .comments__item-more {
+                opacity: 1;
+            }
+        }
+    }
+}

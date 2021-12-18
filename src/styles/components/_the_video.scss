@@ -5,6 +5,20 @@
     flex-direction: column;
     text-decoration: unset;
 
+    &--suggested {
+        flex-direction: row;
+
+        .video__thumbnail {
+            height: 94px;
+            min-width: 168px;
+            max-width: 168px;
+        }
+
+        .video__avatar {
+            display: none;
+        }
+    }
+
     &__thumbnail {
         height: 202px;
         width: 100%;
@@ -102,6 +116,11 @@
                 font-size: 16px;
                 color: #fff;
                 overflow: hidden;
+
+                -webkit-line-clamp: 2;
+                display: box;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
             }
         }
     }

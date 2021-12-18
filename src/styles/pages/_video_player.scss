@@ -1,0 +1,25 @@
+.view-video {
+    display: flex;
+
+    padding: 22px;
+    overflow-y: scroll;
+
+    gap: 16px;
+
+    height: 100%;
+
+    &__content {
+        width: 65%;
+
+        hr {
+            margin: 15px 0;
+            border: unset;
+            border-bottom: 1px solid $tertiary;
+        }
+    }
+
+    &__video {
+        width: 100%;
+        height: 440px;
+    }
+}
