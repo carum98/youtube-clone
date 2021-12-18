@@ -70,21 +70,4 @@
         cursor: pointer;
         height: 35px;
     }
-
-    &__suggestions {
-        width: 35%;
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-
-        #chipbar {
-            background: transparent;
-            border: unset;
-            padding: 0;
-
-            [class*='button-'] {
-                background: transparent;
-            }
-        }
-    }
 }

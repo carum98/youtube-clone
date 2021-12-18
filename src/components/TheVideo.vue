@@ -16,6 +16,10 @@ defineProps({
         type: Boolean,
         default: false,
     },
+    isExplore: {
+        type: Boolean,
+        default: false,
+    },
 })
 </script>
 
@@ -23,7 +27,10 @@ defineProps({
     <a
         :href="`/watch/${video.id}`"
         class="video"
-        :class="{ 'video--suggested': isSuggestion }">
+        :class="{
+            'video--suggested': isSuggestion,
+            'video--explore': isExplore,
+        }">
         <section class="video__thumbnail">
             <img :src="video.thumbnail" />
             <div class="video__thumbnail-actions">
@@ -57,6 +64,10 @@ defineProps({
                 <p>
                     {{ convertNumberToString(video.views) }} -
                     {{ getTimeAgo(video.publishedAt) }}
+                </p>
+
+                <p v-if="isExplore" class="video__info-description">
+                    {{ video.description }}
                 </p>
             </div>
         </header>

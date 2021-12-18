@@ -1,0 +1,24 @@
+{
+    "actions": [
+        {
+            "text": "Trending",
+            "img": "https://www.youtube.com/img/explore/destinations/icons/trending_color_64.png"
+        },
+        {
+            "text": "Music",
+            "img": "https://youtube.com/img/explore/destinations/icons/music_color_64.png"
+        },
+        {
+            "text": "Gaming",
+            "img": "https://youtube.com/img/explore/destinations/icons/gaming_color_64.png"
+        },
+        {
+            "text": "Sports",
+            "img": "https://youtube.com/img/explore/destinations/icons/sports_color_64.png"
+        },
+        {
+            "text": "Learning",
+            "img": "https://youtube.com/img/explore/destinations/icons/learning_color_64_v1.png"
+        }
+    ]
+}

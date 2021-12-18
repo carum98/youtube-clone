@@ -1,0 +1,47 @@
+.explore {
+    height: 100%;
+    overflow-y: scroll;
+
+    &__container {
+        width: 70%;
+        margin-left: 120px;
+    }
+
+    &__videos {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        margin-top: 15px;
+    }
+
+    &__actions {
+        display: flex;
+        gap: 4px;
+        margin-top: 15px;
+        margin-bottom: 30px;
+
+        button {
+            height: 116px;
+            flex: 1;
+            background: $secondary;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+
+            text-align: start;
+            padding: 20px;
+            cursor: pointer;
+
+            p {
+                font-size: 15px;
+                font-weight: bold;
+                margin-top: 15px;
+            }
+
+            &:hover {
+                background: #000;
+            }
+        }
+    }
+}
