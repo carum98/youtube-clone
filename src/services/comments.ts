@@ -2,16 +2,18 @@ import Api from './api'
 import IComment from '../interfaces/IComment'
 
 export const getCommentThreads = async (
-    videoId: string
-): Promise<IComment[]> => {
+    videoId: string,
+    nextPageToken = ''
+): Promise<{ nextPageToken: string; comments: IComment[] }> => {
     const { data } = await Api().get('commentThreads', {
         params: {
             part: 'snippet',
             videoId,
+            pageToken: nextPageToken,
         },
     })
 
-    return data.items.map((item: any) => ({
+    const comments = data.items.map((item: any) => ({
         id: item.id,
         text: item.snippet.topLevelComment.snippet.textOriginal,
         authorDisplayName:
@@ -22,4 +24,9 @@ export const getCommentThreads = async (
         publishedAt: item.snippet.topLevelComment.snippet.publishedAt,
         authorChannelUrl: item.snippet.topLevelComment.snippet.authorChannelUrl,
     })) as IComment[]
+
+    return {
+        nextPageToken: data.nextPageToken,
+        comments,
+    }
 }

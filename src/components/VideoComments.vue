@@ -1,9 +1,10 @@
 <script lang="ts" setup>
-import { PropType, ref, Ref } from 'vue'
+import { PropType, ref } from 'vue'
 import IVideoInfo from '../interfaces/IVideoInfo'
 import IComment from '../interfaces/IComment'
 import { getCommentThreads } from '../services/comments'
 import { getTimeAgo, convertNumberToString } from '../util/helper'
+import { useInfiniteScroll } from '../composable/useInfiniteScroll.'
 
 const props = defineProps({
     video: {
@@ -12,11 +13,19 @@ const props = defineProps({
     },
 })
 
-const comments = ref([]) as Ref<IComment[]>
+const comments = ref<IComment[]>([])
 
-getCommentThreads(props.video.id).then((data) => {
-    comments.value = data
-})
+const getComments = async (pageToken = '') => {
+    const { comments: data, nextPageToken } = await getCommentThreads(
+        props.video.id,
+        pageToken
+    )
+    comments.value.push(...data)
+
+    return nextPageToken
+}
+
+useInfiniteScroll(getComments)
 </script>
 
 <template>

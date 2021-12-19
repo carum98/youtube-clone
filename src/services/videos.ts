@@ -3,13 +3,17 @@ import IVideoInfo from '../interfaces/IVideoInfo'
 import Api from './api'
 
 export default {
-    async getVideos() {
+    async getVideos(nextPageToken = ''): Promise<{
+        nextPageToken: string
+        videos: IVideo[]
+    }> {
         const { data } = await Api().get('videos', {
             params: {
                 part: 'snippet,contentDetails,statistics',
                 regionCode: 'CR',
                 chart: 'mostPopular',
                 maxResults: '30',
+                pageToken: nextPageToken,
             },
         })
 
@@ -28,7 +32,10 @@ export default {
             duration: item.contentDetails.duration,
         }))
 
-        return videos
+        return {
+            nextPageToken: data.nextPageToken,
+            videos,
+        }
     },
     async getVideo(videoId: string): Promise<IVideoInfo> {
         const { data } = await Api().get('videos', {

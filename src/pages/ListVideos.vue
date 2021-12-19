@@ -4,14 +4,18 @@ import TheVideo from '../components/TheVideo.vue'
 import IVideo from '../interfaces/IVideo'
 import Videos from '../services/videos'
 import { ref, Ref } from 'vue'
+import { useInfiniteScroll } from '../composable/useInfiniteScroll.'
 
 const videos = ref([]) as Ref<IVideo[]>
 
-const getVideos = async () => {
-    videos.value = await Videos.getVideos()
+const getVideos = async (pageToken = '') => {
+    const { videos: data, nextPageToken } = await Videos.getVideos(pageToken)
+    videos.value.push(...data)
+
+    return nextPageToken
 }
 
-getVideos()
+useInfiniteScroll(getVideos)
 </script>
 
 <template>

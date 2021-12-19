@@ -1,22 +1,25 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { buttons, buttons2, footer } from '../static/drawer.json'
+import useDrawer from '../composable/useDrawer'
 
-let isOpen = ref(false)
+const small = ref(false)
 
 onMounted(() => {
     new ResizeObserver((entries) => {
         entries.forEach((entry) => {
-            isOpen.value = entry.contentRect.width !== 240
+            small.value = entry.contentRect.width !== 240
         })
     }).observe(document.querySelector('#drawer') ?? document.body)
 })
+
+const { isOpen } = useDrawer()
 </script>
 
 <template>
-    <nav id="drawer">
+    <nav id="drawer" :class="{ open: isOpen }">
         <template
-            v-for="button in isOpen ? buttons : buttons2"
+            v-for="button in small ? buttons : buttons2"
             :key="button.icon">
             <hr v-if="button.hasOwnProperty('divider')" />
 
@@ -37,7 +40,7 @@ onMounted(() => {
             </router-link>
         </template>
 
-        <footer v-if="!isOpen" class="drawer__footer">
+        <footer v-if="!small" class="drawer__footer">
             <a v-for="item in footer" :key="item.to">
                 {{ item.text }}
             </a>

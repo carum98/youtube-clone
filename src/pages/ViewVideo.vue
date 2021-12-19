@@ -11,13 +11,22 @@ import VideoDetail from '../components/VideoDetail.vue'
 import VideoDescription from '../components/VideoDescription.vue'
 import ChipBar from '../layout/ChipBar.vue'
 import VideoComments from '../components/VideoComments.vue'
+import { useInfiniteScroll } from '../composable/useInfiniteScroll.'
 
 const route = useRoute()
 const video = ref({}) as Ref<IVideoInfo>
 const videos = ref([]) as Ref<IVideo[]>
 
+const getVideos = async (pageToken = '') => {
+    const { videos: data, nextPageToken } = await API.getVideos(pageToken)
+    videos.value.push(...data)
+
+    return nextPageToken
+}
+
+useInfiniteScroll(getVideos)
+
 API.getVideo(route.params.id as string).then((r) => (video.value = r))
-API.getVideos().then((r) => (videos.value = r))
 </script>
 
 <template>

@@ -8,8 +8,8 @@
 
     justify-content: center;
 
-    height: calc(100% - 64px);
-    overflow-y: scroll;
+    // height: calc(100% - 64px);
+    // overflow-y: scroll;
 
     @include lg() {
         grid-template-columns: repeat(4, 1fr);

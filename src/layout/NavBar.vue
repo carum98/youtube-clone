@@ -1,9 +1,13 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import useDrawer from '../composable/useDrawer'
+
+const { toggle } = useDrawer()
+</script>
 
 <template>
     <header id="navbar">
         <section>
-            <i class="material-icons-outlined">menu</i>
+            <i class="menu material-icons-outlined" @click="toggle">menu</i>
             <img class="logo" src="../assets/yt-logo-dark.svg" />
         </section>
         <section class="search">

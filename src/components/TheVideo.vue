@@ -24,15 +24,15 @@ defineProps({
 </script>
 
 <template>
-    <a
-        :href="`/watch/${video.id}`"
+    <router-link
+        :to="{ name: 'watch', params: { id: video.id, title: video.title } }"
         class="video"
         :class="{
             'video--suggested': isSuggestion,
             'video--explore': isExplore,
         }">
         <section class="video__thumbnail">
-            <img :src="video.thumbnail" />
+            <img loading="lazy" :src="video.thumbnail" />
             <div class="video__thumbnail-actions">
                 <div>
                     <button>
@@ -56,7 +56,10 @@ defineProps({
             </p>
         </section>
         <header>
-            <img :src="video.channelThumbnail" class="video__avatar" />
+            <img
+                loading="lazy"
+                :src="video.channelThumbnail"
+                class="video__avatar" />
 
             <div class="video__info">
                 <p class="video__info-title">{{ video.title }}</p>
@@ -71,5 +74,5 @@ defineProps({
                 </p>
             </div>
         </header>
-    </a>
+    </router-link>
 </template>

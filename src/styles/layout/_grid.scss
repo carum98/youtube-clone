@@ -20,6 +20,18 @@
         grid-template-columns: 1fr;
     }
 
+    &.no-drawer {
+        grid-template-areas:
+            'navbar'
+            'content';
+
+        grid-template-columns: unset;
+
+        #drawer {
+            display: none;
+        }
+    }
+
     width: 100%;
     overflow-x: hidden;
 }
