@@ -8,7 +8,9 @@ const { toggle } = useDrawer()
     <header id="navbar">
         <section>
             <i class="menu material-icons-outlined" @click="toggle">menu</i>
-            <img class="logo" src="../assets/yt-logo-dark.svg" />
+            <router-link :to="{ name: 'list' }">
+                <img class="logo" src="../assets/yt-logo-dark.svg" />
+            </router-link>
         </section>
         <section class="search">
             <input type="text" placeholder="Search" />

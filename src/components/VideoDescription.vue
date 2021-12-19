@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import IVideoInfo from '../interfaces/IVideoInfo'
-import { PropType, Ref, ref } from 'vue'
+import { PropType, Ref, ref, watch } from 'vue'
 import { getChannel } from '../services/channel'
 import IChannel from '../interfaces/IChannel'
 
-const props = defineProps({
+let props = defineProps({
     video: {
         type: Object as PropType<IVideoInfo>,
         required: true,
@@ -14,9 +14,12 @@ const props = defineProps({
 const channel = ref({}) as Ref<IChannel>
 const showMore = ref(false)
 
-getChannel(props.video.channelId).then((data) => {
+const getChannelInfo = async () => {
+    const data = await getChannel(props.video.channelId)
     channel.value = data
-})
+}
+
+watch(() => props.video, getChannelInfo)
 </script>
 
 <template>

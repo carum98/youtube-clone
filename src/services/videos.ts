@@ -10,7 +10,6 @@ export default {
         const { data } = await Api().get('videos', {
             params: {
                 part: 'snippet,contentDetails,statistics',
-                regionCode: 'CR',
                 chart: 'mostPopular',
                 maxResults: '30',
                 pageToken: nextPageToken,

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ref, Ref } from 'vue'
-import { useRoute } from 'vue-router'
+import { ref } from 'vue'
+import { onBeforeRouteUpdate, useRoute } from 'vue-router'
 
 import API from '../services/videos'
 import IVideoInfo from '../interfaces/IVideoInfo'
@@ -14,8 +14,8 @@ import VideoComments from '../components/VideoComments.vue'
 import { useInfiniteScroll } from '../composable/useInfiniteScroll.'
 
 const route = useRoute()
-const video = ref({}) as Ref<IVideoInfo>
-const videos = ref([]) as Ref<IVideo[]>
+const video = ref<IVideoInfo>({} as IVideoInfo)
+const videos = ref<IVideo[]>([])
 
 const getVideos = async (pageToken = '') => {
     const { videos: data, nextPageToken } = await API.getVideos(pageToken)
@@ -24,9 +24,22 @@ const getVideos = async (pageToken = '') => {
     return nextPageToken
 }
 
+const getVideo = async (id: string) => {
+    const data = await API.getVideo(id)
+    video.value = data
+}
+
+getVideo(route.params.id as string)
 useInfiniteScroll(getVideos)
 
-API.getVideo(route.params.id as string).then((r) => (video.value = r))
+onBeforeRouteUpdate(async (to, from) => {
+    if (to.params.id !== from.params.id) {
+        videos.value = []
+
+        getVideo(to.params.id as string)
+        getVideos()
+    }
+})
 </script>
 
 <template>
@@ -35,8 +48,9 @@ API.getVideo(route.params.id as string).then((r) => (video.value = r))
             <iframe
                 class="view-video__video"
                 type="text/html"
-                :src="`http://www.youtube.com/embed/${route.params.id}`"
-                frameborder="0"></iframe>
+                :src="`http://www.youtube.com/embed/${video.id}?autoplay=1&mute=1`"
+                frameborder="0"
+                allowfullscreen></iframe>
 
             <VideoDetail :video="video" />
 

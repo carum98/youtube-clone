@@ -19,7 +19,7 @@ const formatDate = (date: string) => {
     })
 }
 
-const formatViewCount = (count: number) =>
+const formatViewCount = (count = 0) =>
     count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 </script>
 
@@ -37,7 +37,13 @@ const formatViewCount = (count: number) =>
                 <button>
                     <span class="material-icons-outlined"> thumb_up </span>
                     <span>
-                        {{ convertNumberToString(video.likeCount.toString()) }}
+                        {{
+                            convertNumberToString(
+                                video.likeCount
+                                    ? video.likeCount.toString()
+                                    : '0'
+                            )
+                        }}
                     </span>
                 </button>
                 <button>

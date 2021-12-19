@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { PropType, ref } from 'vue'
+import { PropType, ref, watch } from 'vue'
 import IVideoInfo from '../interfaces/IVideoInfo'
 import IComment from '../interfaces/IComment'
 import { getCommentThreads } from '../services/comments'
@@ -16,6 +16,8 @@ const props = defineProps({
 const comments = ref<IComment[]>([])
 
 const getComments = async (pageToken = '') => {
+    if (!props.video.id) return ''
+
     const { comments: data, nextPageToken } = await getCommentThreads(
         props.video.id,
         pageToken
@@ -26,6 +28,14 @@ const getComments = async (pageToken = '') => {
 }
 
 useInfiniteScroll(getComments)
+
+watch(
+    () => props.video,
+    () => {
+        comments.value = []
+        getComments()
+    }
+)
 </script>
 
 <template>
