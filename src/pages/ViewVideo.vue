@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { onBeforeRouteUpdate, useRoute } from 'vue-router'
 
-import API from '../services/videos'
+import API, { getRelatedVideos } from '../services/videos'
 import IVideoInfo from '../interfaces/IVideoInfo'
 import IVideo from '../interfaces/IVideo'
 
@@ -18,7 +18,10 @@ const video = ref<IVideoInfo>({} as IVideoInfo)
 const videos = ref<IVideo[]>([])
 
 const getVideos = async (pageToken = '') => {
-    const { videos: data, nextPageToken } = await API.getVideos(pageToken)
+    const { videos: data, nextPageToken } = await getRelatedVideos(
+        route.params.id as string,
+        pageToken
+    )
     videos.value.push(...data)
 
     return nextPageToken
