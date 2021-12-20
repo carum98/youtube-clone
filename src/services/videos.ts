@@ -109,3 +109,40 @@ export const getRelatedVideos = async (
         videos,
     }
 }
+
+export const getVideoChannel = async (
+    channelId: string,
+    nextPageToken = ''
+): Promise<{
+    nextPageToken: string
+    videos: IVideo[]
+}> => {
+    const { data } = await Api().get('search', {
+        params: {
+            part: 'snippet',
+            channelId: channelId,
+            maxResults: 5,
+            order: 'date',
+            type: 'video',
+            pageToken: nextPageToken,
+        },
+    })
+
+    const videos: IVideo[] = data.items.map((item: any) => ({
+        id: item.id,
+        title: item.snippet.title,
+        description: item.snippet.description,
+        thumbnail: item.snippet.thumbnails.high.url,
+        channelTitle: item.snippet.channelTitle,
+        channelId: item.snippet.channelId,
+        channelThumbnail: item.snippet.thumbnails.default.url,
+        publishedAt: item.snippet.publishedAt,
+        duration: 'PT0S',
+        views: '',
+    }))
+
+    return {
+        nextPageToken: data.nextPageToken,
+        videos,
+    }
+}

@@ -1,0 +1,38 @@
+.section {
+    border-bottom: 1px solid $tertiary;
+    padding: 1rem 0;
+
+    &__header {
+        display: flex;
+        font-size: 18px;
+
+        button {
+            margin-left: 2rem;
+            cursor: pointer;
+            background: transparent;
+            color: grey;
+            display: flex;
+            align-items: center;
+            border: unset;
+            gap: 10px;
+        }
+    }
+
+    &__content {
+        display: flex;
+        gap: 5px;
+        padding-top: 1rem;
+
+        .video {
+            width: 245px;
+
+            &__thumbnail {
+                height: 138px;
+            }
+
+            &__avatar {
+                display: none;
+            }
+        }
+    }
+}

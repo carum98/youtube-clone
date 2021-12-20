@@ -63,7 +63,11 @@ defineProps({
 
             <div class="video__info">
                 <p class="video__info-title">{{ video.title }}</p>
-                <p>{{ video.channelTitle }}</p>
+                <router-link
+                    class="video__info-channel"
+                    :to="{ name: 'channel', params: { id: video.channelId } }">
+                    {{ video.channelTitle }}
+                </router-link>
                 <p>
                     {{ convertNumberToString(video.views) }} -
                     {{ getTimeAgo(video.publishedAt) }}
