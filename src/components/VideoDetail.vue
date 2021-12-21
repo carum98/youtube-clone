@@ -55,6 +55,10 @@ const formatViewCount = (count = 0) =>
                     SHARE
                 </button>
                 <button>
+                    <span class="material-icons-outlined"> content_cut </span>
+                    CLIP
+                </button>
+                <button>
                     <span class="material-icons-outlined"> playlist_add </span>
                     SAVE
                 </button>

@@ -3,6 +3,7 @@ import IVideoInfo from '../interfaces/IVideoInfo'
 import { PropType, Ref, ref, watch } from 'vue'
 import { getChannel } from '../services/channel'
 import IChannel from '../interfaces/IChannel'
+import { convertNumberToString } from '../util/helper'
 
 let props = defineProps({
     video: {
@@ -35,7 +36,14 @@ watch(() => props.video, getChannelInfo)
                     <p class="view-video__channel-title">{{ channel.title }}</p>
 
                     <p class="view-video__channel-suscription">
-                        {{ channel.subscriberCount }} subscribers
+                        {{
+                            convertNumberToString(
+                                channel.subscriberCount
+                                    ? channel.subscriberCount.toString()
+                                    : '0'
+                            )
+                        }}
+                        subscribers
                     </p>
                 </section>
             </div>

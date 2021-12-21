@@ -13,13 +13,13 @@ const routes = [
         path: '/',
         component: ListVideos,
         name: 'list',
-        meta: { title: 'List Videos' },
+        meta: { title: 'YouTube-Clone' },
     },
     {
         path: '/explore',
         component: ExploreVideos,
         name: 'explore',
-        meta: { title: 'Explore Videos' },
+        meta: { title: 'Explore - YouTube-Clone' },
     },
     {
         path: '/watch/:id',

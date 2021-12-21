@@ -73,7 +73,7 @@ export const getRelatedVideos = async (
             part: 'id',
             relatedToVideoId: videoId,
             type: 'video',
-            maxResults: '10',
+            maxResults: '25',
             pageToken: nextPageToken,
         },
     })
