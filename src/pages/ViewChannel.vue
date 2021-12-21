@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import IChannel from '../interfaces/IChannel'
 import { getChannelView } from '../services/channel'
 import { useRoute } from 'vue-router'
+import { convertNumberToString } from '../util/helper'
 
 const route = useRoute()
 const channel = ref<IChannel>({} as IChannel)
@@ -48,17 +49,21 @@ const nav = [
         <img class="channel__header-logo" :src="channel.thumbnail" />
 
         <div class="channel__header-info">
-            <h1 class="channel__header-name">{{ channel.title }}</h1>
+            <h2 class="channel__header-name">{{ channel.title }}</h2>
             <p class="channel__header-suscribers">
-                {{ channel.countSubscribers }} suscribers
+                {{
+                    convertNumberToString(
+                        channel.countSubscribers
+                            ? channel.countSubscribers.toString()
+                            : '0'
+                    )
+                }}
+                suscribers
             </p>
         </div>
 
         <section>
             <button class="channel__header-suscribe">SUSCRIBE</button>
-            <button class="channel__header-notification">
-                <span class="material-icons-outlined"> notifications </span>
-            </button>
         </section>
     </header>
 

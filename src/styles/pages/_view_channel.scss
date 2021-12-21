@@ -4,12 +4,8 @@
     &__banner {
         background: #000;
         height: 250px;
-
-        img {
-            height: 100%;
-            margin-left: auto;
-            margin-right: auto;
-        }
+        display: flex;
+        justify-content: center;
     }
 
     &__header {
@@ -37,7 +33,7 @@
             background: red;
             color: #fff;
             border: unset;
-            height: 30px;
+            height: 40px;
             padding: 0 20px;
 
             font-weight: bold;
@@ -78,5 +74,38 @@
         padding: 0 $padding;
         background: #0f0f0f;
         padding-top: 30px;
+    }
+
+    &__videos {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        // grid-auto-rows: 340px;
+
+        gap: 16px;
+
+        &-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+
+            button {
+                background: transparent;
+                color: #fff;
+                border: unset;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+
+        .video {
+            &__thumbnail {
+                height: 150px;
+            }
+
+            &__avatar {
+                display: none;
+            }
+        }
     }
 }

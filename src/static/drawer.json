@@ -11,7 +11,7 @@
             "icon": "explore"
         },
         {
-            "text": "Suscriptions",
+            "text": "Subcriptions",
             "to": "/subscriptions",
             "icon": "subscriptions"
         },
@@ -33,7 +33,7 @@
             "icon": "explore"
         },
         {
-            "text": "Suscriptions",
+            "text": "Subcriptions",
             "to": "/subscriptions",
             "icon": "subscriptions"
         },
@@ -56,14 +56,34 @@
             "icon": "slideshow"
         },
         {
+            "text": "Watch later",
+            "to": "/watch_later",
+            "icon": "watch_later"
+        },
+        {
             "text": "Liked videos",
             "to": "/liked_videos",
             "icon": "thumb_up"
         },
         {
-            "text": "Watch later",
-            "to": "/watch_later",
-            "icon": "watch_later"
+            "text": "Show more",
+            "to": "/liked_videos",
+            "icon": "expand_more"
+        },
+        {
+            "divider": true
+        },
+        {
+            "subtitle": true,
+            "text": "SUBSCRIPTIONS"
+        },
+        {
+            "suscriptions": true
+        },
+        {
+            "text": "Show all",
+            "to": "/liked_videos",
+            "icon": "expand_more"
         },
         {
             "divider": true

@@ -2,15 +2,23 @@
 import { ref, onMounted } from 'vue'
 import { buttons, buttons2, footer } from '../static/drawer.json'
 import useDrawer from '../composable/useDrawer'
+import ISuscription from '../interfaces/ISuscription'
+import { getSuscription } from '../services/suscriptions'
 
 const small = ref(false)
 
 onMounted(() => {
-    new ResizeObserver((entries) => {
-        entries.forEach((entry) => {
-            small.value = entry.contentRect.width !== 240
-        })
-    }).observe(document.querySelector('#drawer') ?? document.body)
+    // new ResizeObserver((entries) => {
+    //     entries.forEach((entry) => {
+    //         small.value = entry.contentRect.width !== 240
+    //     })
+    // }).observe(document.querySelector('#drawer') ?? document.body)
+})
+
+const suscriptions = ref<ISuscription[]>([])
+
+getSuscription().then((data) => {
+    suscriptions.value.push(...data)
 })
 
 const { isOpen } = useDrawer()
@@ -26,6 +34,17 @@ const { isOpen } = useDrawer()
             <h3 v-else-if="button.hasOwnProperty('subtitle')">
                 {{ button.text }}
             </h3>
+
+            <section v-else-if="button.hasOwnProperty('suscriptions')">
+                <router-link
+                    v-for="suscription in suscriptions"
+                    :key="suscription.id"
+                    class="drawer__item drawer__item-suscription"
+                    :to="{ name: 'channel', params: { id: suscription.id } }">
+                    <img :src="suscription.image" />
+                    <p>{{ suscription.name }}</p>
+                </router-link>
+            </section>
 
             <router-link
                 v-else

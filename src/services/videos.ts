@@ -121,7 +121,7 @@ export const getVideoChannel = async (
         params: {
             part: 'snippet',
             channelId: channelId,
-            maxResults: 5,
+            maxResults: 15,
             order: 'date',
             type: 'video',
             pageToken: nextPageToken,

@@ -35,7 +35,7 @@ if (props.section.type === 'singleplaylist' && props.section.playlistId) {
 
 <template>
     <section class="section">
-        <header class="section__header">
+        <header v-if="title" class="section__header">
             <h1 class="section__header-title">{{ title }}</h1>
             <button>
                 <span class="material-icons-outlined"> play_arrow </span>PLAY

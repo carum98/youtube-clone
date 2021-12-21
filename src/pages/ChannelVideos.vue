@@ -4,6 +4,7 @@ import { getVideoChannel } from '../services/videos'
 import { useRoute } from 'vue-router'
 import { ref } from 'vue'
 import IVideo from '../interfaces/IVideo'
+import TheVideo from '../components/TheVideo.vue'
 
 const route = useRoute()
 
@@ -23,5 +24,14 @@ useInfiniteScroll(getVideos)
 </script>
 
 <template>
-    {{ videos }}
+    <section class="channel__videos-header">
+        <h1>Uploads</h1>
+        <button>
+            <span class="material-icons-outlined"> sort </span>
+            SORT BY
+        </button>
+    </section>
+    <section class="channel__videos">
+        <TheVideo v-for="video in videos" :key="video.id" :video="video" />
+    </section>
 </template>
