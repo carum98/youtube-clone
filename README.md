@@ -14,7 +14,7 @@ VITE_YOUTUBE_API_KEY=[YOUTUBE_API_KEY]
 
 With Docker
 ```bash
-docker run -d --env VITE_YOUTUBE_URL=[GOOGLE_YOUTUBE_URL] --env VITE_YOUTUBE_API_KEY=[YOUTUBE_API_KEY] --env PORT=3000 -p 8080:3000 [image-name]
+docker run -d --env VITE_YOUTUBE_URL=[GOOGLE_YOUTUBE_URL] --env VITE_YOUTUBE_API_KEY=[YOUTUBE_API_KEY] --env PORT=3000 -p 8080:3000 ghcr.io/carum98/youtube:[tag]
 ```
 
 ## Video
