@@ -12,6 +12,11 @@ VITE_YOUTUBE_URL=[GOOGLE_YOUTUBE_URL]
 VITE_YOUTUBE_API_KEY=[YOUTUBE_API_KEY]
 ```
 
+With Docker
+```bash
+docker run -d --env VITE_YOUTUBE_URL=[GOOGLE_YOUTUBE_URL] --env VITE_YOUTUBE_API_KEY=[YOUTUBE_API_KEY] --env PORT=3000 -p 8080:3000 [image-name]
+```
+
 ## Video
 https://user-images.githubusercontent.com/40967143/146881153-ada40ee9-4983-4fb7-9e15-beabedfa8484.mp4
 
