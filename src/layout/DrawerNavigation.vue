@@ -26,9 +26,7 @@ const { isOpen } = useDrawer()
 
 <template>
     <nav id="drawer" :class="{ open: isOpen }">
-        <template
-            v-for="button in small ? buttons : buttons2"
-            :key="button.icon">
+        <template v-for="button in small ? buttons : buttons2" :key="button.icon">
             <hr v-if="button.hasOwnProperty('divider')" />
 
             <h3 v-else-if="button.hasOwnProperty('subtitle')">
@@ -36,21 +34,14 @@ const { isOpen } = useDrawer()
             </h3>
 
             <section v-else-if="button.hasOwnProperty('suscriptions')">
-                <router-link
-                    v-for="suscription in suscriptions"
-                    :key="suscription.id"
-                    class="drawer__item drawer__item-suscription"
-                    :to="{ name: 'channel', params: { id: suscription.id } }">
+                <router-link v-for="suscription in suscriptions" :key="suscription.id"
+                    class="drawer__item drawer__item-suscription" :to="{ name: 'channel', params: { id: suscription.id } }">
                     <img :src="suscription.image" />
                     <p>{{ suscription.name }}</p>
                 </router-link>
             </section>
 
-            <router-link
-                v-else
-                class="drawer__item"
-                :to="button.to"
-                active-class="drawer__item--active"
+            <router-link v-else class="drawer__item" :to="button.to || ''" active-class="drawer__item--active"
                 exact-active-class="drawer__item--exact">
                 <i class="material-icons-outlined">
                     {{ button.icon }}
