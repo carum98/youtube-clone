@@ -48,11 +48,8 @@ onBeforeRouteUpdate(async (to, from) => {
 <template>
     <section class="view-video">
         <div class="view-video__content">
-            <iframe
-                class="view-video__video"
-                type="text/html"
-                :src="`http://www.youtube.com/embed/${video.id}?autoplay=1&mute=1`"
-                frameborder="0"
+            <iframe class="view-video__video" type="text/html"
+                :src="`https://www.youtube.com/embed/${video.id}?autoplay=1&mute=1`" frameborder="0"
                 allowfullscreen></iframe>
 
             <VideoDetail :video="video" />
@@ -68,11 +65,7 @@ onBeforeRouteUpdate(async (to, from) => {
 
         <div class="view-video__suggestions">
             <ChipBar />
-            <TheVideo
-                v-for="item in videos"
-                :key="item.id"
-                :video="item"
-                is-suggestion />
+            <TheVideo v-for="item in videos" :key="item.id" :video="item" is-suggestion />
         </div>
     </section>
 </template>
